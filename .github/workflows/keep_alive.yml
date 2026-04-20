@@ -10,8 +10,8 @@ jobs:
   ping_supabase:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Recipes Table
+      - name: Ping Stocks Table
         run: |
-          curl -i -X GET "https://dtglujrdhetwahbutzgv.supabase.co/rest/v1/recipes?select=id&limit=1" \
+          curl --fail -i -X GET "https://dtglujrdhetwahbutzgv.supabase.co/rest/v1/stocks?select=id&limit=1" \
           -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
           -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
